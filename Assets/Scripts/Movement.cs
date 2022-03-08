@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
     void jump(int force){
            if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
             isGrounded = false;
-            selfRigidbody.AddForce(0, force, 0, ForceMode.Impulse);
+            selfRigidbody.velocity = new Vector3(selfRigidbody.velocity.y, 5 , 0);
             
         }
     }
