@@ -6,12 +6,12 @@ public class Movement : MonoBehaviour
 {
     public bool isGrounded;
     public Vector3 velocity;
-    public GameObject projectile;
-    private Rigidbody selfRigidbody;
+    
+    private Rigidbody rb;
     
     
     void Start(){
-        selfRigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
     void OnCollisionStay()
          {
@@ -25,14 +25,14 @@ public class Movement : MonoBehaviour
     void jump(int force){
            if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
             isGrounded = false;
-            selfRigidbody.velocity = new Vector3(selfRigidbody.velocity.y, 5 , 0);
+            rb.velocity = new Vector3(rb.velocity.y, force , 0);
             
         }
     }
     
     void Update(){
         transform.position += velocity * Time.deltaTime;
-        jump(50);
+        jump(7);
 
 
         velocity.x = 0;
@@ -47,11 +47,7 @@ public class Movement : MonoBehaviour
         {
             velocity.z = 5;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-         {
-             GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 10);
-         }
+        
          
     }
 }

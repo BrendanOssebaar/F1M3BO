@@ -10,6 +10,6 @@ public class FollowCamera : MonoBehaviour
  
     public void Update()
     {
-        cam.position = Cylinder.position + new Vector3(CamDistance, 0, 0);
+        cam.position = Cylinder.position + new Vector3(CamDistance, 2, 0);
     }
 }
