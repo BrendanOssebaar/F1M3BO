@@ -23,10 +23,10 @@ public class Movement : MonoBehaviour
          }
     
     void jump(int force){
-           if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
             isGrounded = false;
             rb.velocity = new Vector3(rb.velocity.y, force , 0);
-            
+            Debug.Log("jump");
         }
     }
     
