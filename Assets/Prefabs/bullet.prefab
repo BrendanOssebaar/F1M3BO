@@ -128,3 +128,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5837971892625062614}
   Prefab: {fileID: 6987064174325692520, guid: d8353767200b32a4b9978cb0fb740b50, type: 3}
+  originalObject: {fileID: 0}
+  reflectedObject: {fileID: 0}

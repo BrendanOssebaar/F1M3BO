@@ -25,10 +25,10 @@ public class DestroyBullet : MonoBehaviour
         {
             if (collision.gameObject.name != "Character")
             {
-                Instantiate(Prefab, bullet.transform.position, Quaternion.Euler(180,0,0));
+                Instantiate(Prefab, bullet .transform.position, Quaternion.Euler(180,0,0));
                 
                 Destroy(bullet);
-
+                
             }
             
             
