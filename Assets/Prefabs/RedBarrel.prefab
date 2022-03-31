@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 17161449574953366}
   - component: {fileID: 640719718101459796}
   - component: {fileID: 4151287151989891407}
-  - component: {fileID: 4402063389306674593}
   - component: {fileID: -4092551905738439336}
+  - component: {fileID: 9054827781005814269}
+  - component: {fileID: 4272021990429202560}
   m_Layer: 0
   m_Name: RedBarrel
   m_TagString: Untagged
@@ -83,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4402063389306674593
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2494539730676966837}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &-4092551905738439336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,3 +100,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 98
   m_CollisionDetection: 0
+--- !u!65 &9054827781005814269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494539730676966837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &4272021990429202560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494539730676966837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57acb43a26a30b84cb4d6a2478baa958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Barrel: {fileID: 2494539730676966837}
+  Prefab: {fileID: 3051686199477243213, guid: 163f9d718d2e7c14ba4f9321d1f316f0, type: 3}
+  Prefab2: {fileID: 2210096809895127647, guid: 041b27c4688f5d94f83f6e4ea28e71c5, type: 3}
+  Prefab3: {fileID: 5191424355421974569, guid: fe593e0cbf937de4294058fd147db165, type: 3}
+  Prefab4: {fileID: 4214122177562464379, guid: 6e896ef3c5fb21445a6829717d836b8c, type: 3}
