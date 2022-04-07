@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class DestroyBullet : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class DestroyBullet : MonoBehaviour
     
     void Start()
     {
-
+        Destroy(bullet, 2f);
     }
 
     
@@ -25,11 +26,11 @@ public class DestroyBullet : MonoBehaviour
         {
             if (collision.gameObject.name != "Character")
             {
-                GameObject particle = Instantiate(Prefab, bullet .transform.position, Quaternion.Euler(180,0,0));
-                
+                GameObject particle = Instantiate(Prefab, bullet.transform.position, Quaternion.Euler(180, 0, 0));
                 Destroy(bullet);
+
                 Destroy(particle, 0.5f);
-                
+
             }
             
             
