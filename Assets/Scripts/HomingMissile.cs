@@ -4,31 +4,64 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class HomingMissile : MonoBehaviour
 {
-    public Camera cam; 
+    [Header("Setup")]
     
-    public float speed = 10f;
-    private Rigidbody rigidBody;
-    public float movementSpeed;
+    public Rigidbody RocketRgb;
+
+    public float turnSpeed = 1f;
+    public float rocketFlySpeed = 10f;
+
+    private Transform rocketLocalTrans;
+
+    // Start is called before the first frame update
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody>();
-        cam = Camera.main;
+        
+
+        rocketLocalTrans = GetComponent<Transform>();
     }
-    void FixedUpdate()
+
+
+    private void FixedUpdate()
     {
-        
-            Vector2 mousePos = Input.mousePosition;
-            Vector3 target = cam.ScreenToWorldPoint(new Vector3(cam.nearClipPlane, -mousePos.y+(Screen.height/2), -mousePos.x+(Screen.width/2)));
+        if (!RocketRgb) //If we have not set the Rigidbody, do nothing..
+            return;
 
-        Debug.Log(mousePos);
-            
-            Vector3 direction = target - transform.position;
-            target.x = transform.position.x;
-            direction.Normalize();
-            //transform.LookAt(target);
-            rigidBody.velocity = direction * speed;
+        RocketRgb.velocity = rocketLocalTrans.forward * rocketFlySpeed;
+        GameObject[] barrels = GameObject.FindGameObjectsWithTag("Barrel");
+        if (barrels.Length > 0 && barrels != null)
+        {
+            float distance = 9000f;
+            Transform currentbarrel = barrels[0].transform;
+            for (int i = 0; i < barrels.Length; ++i)
+            {
+                if (Mathf.Abs(Vector3.Distance(barrels[i].transform.position, RocketRgb.position)) < distance)
+                {
+                    distance = Mathf.Abs(Vector3.Distance(barrels[i].transform.position, RocketRgb.position));
+                    currentbarrel = barrels[i].transform;
+                }
+            }
+            var rocketTargetRot = Quaternion.LookRotation(currentbarrel.position - RocketRgb.position);
 
+            RocketRgb.MoveRotation(Quaternion.RotateTowards(RocketRgb.rotation, rocketTargetRot, turnSpeed));
+        }
         
-        
+             
+       
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Rigidbody plRgb = collision.gameObject.GetComponent<Rigidbody>();
+            if (plRgb)
+                plRgb.AddForceAtPosition(Vector3.up * 1000f, plRgb.position);
+
+            //Deactivate Rocket..
+            this.gameObject.SetActive(false);
+        }
+    }
+
 }

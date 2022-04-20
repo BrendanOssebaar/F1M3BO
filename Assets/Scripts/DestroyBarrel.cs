@@ -38,6 +38,19 @@ public class DestroyBarrel : MonoBehaviour
                 Destroy(particle4, 5f);
 
             }
+            if (collision.gameObject.name == "Missile(Clone)")
+            {
+                GameObject particle = Instantiate(Prefab, Barrel.transform.position, Quaternion.Euler(0, 0, 0));
+                GameObject particle2 = Instantiate(Prefab2, Barrel.transform.position, Quaternion.Euler(0, 0, 0));
+                GameObject particle3 = Instantiate(Prefab3, Barrel.transform.position, Quaternion.Euler(-90, 0, 0));
+                GameObject particle4 = Instantiate(Prefab4, Barrel.transform.position, Quaternion.Euler(0, 0, 0));
+                Destroy(Barrel);
+                Destroy(particle, 5f);
+                Destroy(particle2, 5f);
+                Destroy(particle3, 5f);
+                Destroy(particle4, 5f);
+
+            }
 
         }
     }

@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4be4dd907a521429991cb0f5e780b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  speed: 3
-  movementSpeed: 0
+  RocketTarget: {fileID: 17161449574953366, guid: ea563bc9780e3c649a57651cf9e699a7, type: 3}
+  RocketRgb: {fileID: 8183536728217764616}
+  turnSpeed: 5
+  rocketFlySpeed: 10
