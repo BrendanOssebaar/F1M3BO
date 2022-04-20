@@ -352,7 +352,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8181623382622017736}
-  m_LocalRotation: {x: 0.36153504, y: 0, z: 0, w: 0.9323585}
+  m_LocalRotation: {x: 0.37848702, y: 0, z: 0, w: 0.92560667}
   m_LocalPosition: {x: 0.542, y: 2.377, z: -5.203}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
@@ -362,7 +362,7 @@ Transform:
   - {fileID: 756789349567542143}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 42.389, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 44.48, y: 0, z: 0}
 --- !u!54 &8183536728217764616
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -517,7 +517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4be4dd907a521429991cb0f5e780b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RocketTarget: {fileID: 17161449574953366, guid: ea563bc9780e3c649a57651cf9e699a7, type: 3}
   RocketRgb: {fileID: 8183536728217764616}
   turnSpeed: 5
   rocketFlySpeed: 10
