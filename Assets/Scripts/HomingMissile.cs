@@ -5,22 +5,17 @@ using UnityEngine;
 public class HomingMissile : MonoBehaviour
 {
     [Header("Setup")]
-    
     public Rigidbody RocketRgb;
-
     public float turnSpeed = 1f;
     public float rocketFlySpeed = 10f;
-
     private Transform rocketLocalTrans;
 
     // Start is called before the first frame update
     void Start()
     {
-        
 
         rocketLocalTrans = GetComponent<Transform>();
     }
-
 
     private void FixedUpdate()
     {
@@ -39,15 +34,16 @@ public class HomingMissile : MonoBehaviour
                 {
                     distance = Mathf.Abs(Vector3.Distance(barrels[i].transform.position, RocketRgb.position));
                     currentbarrel = barrels[i].transform;
+                    
+
                 }
-            }
+            } 
             var rocketTargetRot = Quaternion.LookRotation(currentbarrel.position - RocketRgb.position);
 
             RocketRgb.MoveRotation(Quaternion.RotateTowards(RocketRgb.rotation, rocketTargetRot, turnSpeed));
+
         }
         
-             
-       
     }
 
 
