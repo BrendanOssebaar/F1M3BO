@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     private Animator animator;
     private Rigidbody rb;
     public Transform MissileSpawner;
-
+    public AudioClip otherClip;
 
     void Start()
     {
@@ -66,7 +66,9 @@ public class Movement : MonoBehaviour
         {
             GameObject Rocket = Instantiate(projectile, spawnPoint.position, Quaternion.Euler(0, 0, 0)) as GameObject;
             Rocket.transform.parent = MissileSpawner;
-
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = otherClip;
+            audio.Play();
 
         }
     }

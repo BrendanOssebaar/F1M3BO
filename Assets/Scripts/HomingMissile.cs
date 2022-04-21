@@ -9,14 +9,17 @@ public class HomingMissile : MonoBehaviour
     public float turnSpeed = 1f;
     public float rocketFlySpeed = 10f;
     private Transform rocketLocalTrans;
+    
 
-   
+
+
     void Start()
     {
-
+        
         rocketLocalTrans = GetComponent<Transform>();
+        
     }
-
+    
     private void FixedUpdate()
     {
         if (!RocketRgb) 
@@ -52,7 +55,7 @@ public class HomingMissile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Barrel"))
         {
             Rigidbody plRgb = collision.gameObject.GetComponent<Rigidbody>();
             if (plRgb)
