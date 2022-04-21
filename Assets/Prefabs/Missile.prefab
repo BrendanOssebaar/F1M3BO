@@ -28,7 +28,6 @@ Transform:
   m_LocalRotation: {x: -0.7064338, y: -0.030843563, z: -0.030843565, w: 0.7064338}
   m_LocalPosition: {x: -0, y: 2.328, z: -0}
   m_LocalScale: {x: 20.1, y: 20.1, z: 33.23133}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8845394792172438130}
   m_RootOrder: 0
@@ -52,7 +51,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -111,7 +109,6 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 2.574, z: -0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8845394792172438130}
   m_RootOrder: 3
@@ -135,7 +132,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -194,7 +190,6 @@ Transform:
   m_LocalRotation: {x: -0.70643383, y: -0.03084356, z: -0.030843562, w: 0.7064337}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 200}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8845394792172438130}
   m_RootOrder: 2
@@ -218,7 +213,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -277,7 +271,6 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: -0.0468646, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 35}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8845394792172438130}
   m_RootOrder: 1
@@ -301,7 +294,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -346,6 +338,7 @@ GameObject:
   - component: {fileID: 8057459967585351394}
   - component: {fileID: -111839069496763184}
   - component: {fileID: -5778756973028788042}
+  - component: {fileID: -7580280287381493479}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -360,10 +353,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8181623382622017736}
-  m_LocalRotation: {x: 0.37848702, y: 0, z: 0, w: 0.92560667}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.542, y: 2.377, z: -5.203}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8016664335900639865}
   - {fileID: 3174564245701453240}
@@ -371,7 +363,7 @@ Transform:
   - {fileID: 756789349567542143}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 44.48, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!54 &8183536728217764616
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -428,7 +420,6 @@ TrailRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -537,6 +528,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RocketRgb: {fileID: 8183536728217764616}
-  target: {fileID: 17161449574953366, guid: ea563bc9780e3c649a57651cf9e699a7, type: 3}
   turnSpeed: 5
   rocketFlySpeed: 10
+--- !u!114 &-7580280287381493479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8181623382622017736}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eea854b3b030174db025da6bd0795f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 17161449574953366, guid: ea563bc9780e3c649a57651cf9e699a7, type: 3}

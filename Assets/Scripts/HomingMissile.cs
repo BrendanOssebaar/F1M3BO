@@ -10,7 +10,7 @@ public class HomingMissile : MonoBehaviour
     public float rocketFlySpeed = 10f;
     private Transform rocketLocalTrans;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
 
@@ -19,7 +19,7 @@ public class HomingMissile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!RocketRgb) //If we have not set the Rigidbody, do nothing..
+        if (!RocketRgb) 
             return;
 
         RocketRgb.velocity = rocketLocalTrans.forward * rocketFlySpeed;
@@ -30,9 +30,12 @@ public class HomingMissile : MonoBehaviour
             Transform currentbarrel = barrels[0].transform;
             for (int i = 0; i < barrels.Length; ++i)
             {
-                if (Mathf.Abs(Vector3.Distance(barrels[i].transform.position, RocketRgb.position)) < distance)
+
+                float d = Mathf.Abs(Vector3.Distance(barrels[i].transform.position, RocketRgb.position));
+
+                if (d < distance)
                 {
-                    distance = Mathf.Abs(Vector3.Distance(barrels[i].transform.position, RocketRgb.position));
+                    distance = d;
                     currentbarrel = barrels[i].transform;
                     
 
